@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patient Record Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id='patientRecordApp'>
+    <form action="dummy.php" method="get">
+      <label for="Guid">Patient GUID:</label>
+      <input type="text" name="Guid"><br>
+
+      <label for="first">Patient First Name:</label>
+      <input type="text" name="first"><br>
+
+      <label for="last">Patient Last Name:</label>
+      <input type="text" name="last"><br>
+
+      <label for="dob">Patient DOB:</label>
+      <input type="date" name="dob"><br>
+
+      <label for="sex">Patient Sex:</label><br>
+      <label for="M">Male</label>
+      <input type="radio" name="sex" value="M">
+      <label for="F">Female</label>
+      <input type="radio" name="sex" value="F">
+    </form>
+    </div>
+    <table>
+      <tr>
+        <th>GUID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+        <th>Sex</th>
+        </tr>
+
+        <tr>
+          <td v-for='patient in patients'></td>
+        </tr>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/waiting.app.js"></script>
+  </body>
+</html>
