@@ -19,19 +19,63 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">User Information</a>
+          <a class="nav-link" href="#">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Books</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="#">Pricing</a>
         </li>
       </ul>
     </div>
   </nav>
-  <h2>Welcome to my page!</h2>
-    <p>Here you will find useful information about the user information and a full list of books.</p>
+
+  <div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+
+        <div id="patientRecordApp">
+          <form>
+
+          </form>
+          <table class="table table-sm table-hover">
+            <thead>
+              <th>First</th>
+              <th>Last</th>
+              <th>DOB</th>
+              <th>SAB</th>
+            </thead>
+            <tbody>
+              <tr v-for="p in patients">
+                <td>{{ p.firstName }}</td>
+                <td>{{ p.lastName }}</td>
+                <td>{{ p.dob }}</td>
+                <td>{{ p.sexAtBirth }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="patientTriageApp">
+        </div>
+
+      </div>
+
+
+      <div id="patientWaitingApp" class="col-md-4 queueView">
+        <div class="patientWaiting patient"
+        :class="patient.priority + 'Priority'"
+        v-for="patient in patients">
+          Arrival:<br>
+          <span class="patientName">{{ patient.lastName }}</span>,
+          <span class="patientName">{{ patient.firstName }}</span><br>
+          {{ patient.sexAtBirth }} {{ patient.dob }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/waiting.app.js"></script>
+  <script src="js/record.app.js"></script>
 </body>
 
 </html>
