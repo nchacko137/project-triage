@@ -1,3 +1,4 @@
+CREATE DATABASE msis_triage;
 USE msis_triage;
 
 CREATE TABLE Patient (
